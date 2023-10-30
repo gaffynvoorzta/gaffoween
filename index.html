@@ -1,0 +1,97 @@
+<!-- 
+   PROGRESSIVELY ENHANCED
+   If a user has `prefers-reduced-motion: reduced`, there will be no animation
+   and the items will wrap, instead of being hidden.
+   If they have not opted for reduced motion, the items will be duplicated with JS
+   and the duplicated content will have `aria-hidden="true"` to prevent duplicate content
+   for screen readers.
+   If a user has JS disabled or it fails for whatever reason, they will get the same 
+   experience as a user with `prefers-reduced-motion: reduced`, so no content is hidden,
+   and there is no animation.
+   
+   === OPTIONS ===
+   CONTROL SPEED 
+   If you don't assign anything, it will use a default speed.
+   To change the speed, on the `.scroller`
+   you can use `data-speed="fast"` or `data-speed="slow"
+
+   CONTROL DIRECTION 
+   By default, it will scroll from right to left.
+   To change the direction, on the `.scroller`
+   you can use `data-direction="right"` (`data-direction="left" also works, but it is the default) 
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scrolly</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Flavors&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+  <h1 style="text-align: center" class="horrorheader">Happy Halloween</h1>
+
+  <div class="scroller" data-speed="weird" data-direction="left">
+    <ul class="tag-list scroller__inner">
+      <li class="trail">︵‿</li>
+      <li class="trail">︵‿</li>
+      <li class="trail">︵‿</li>
+      <li class="ghost">👻</li>
+    </ul>
+  </div>
+
+  <div class="scroller" data-speed="vvfast" data-direction="right">
+  <ul class="tag-list scroller__inner">
+    <li class="star2">⋆ </li>
+    <li class="star">˚｡⋆</li>
+    <li class="thingy">୨</li>
+    <li class="pumpkin">🎃</li>
+    <li class="thingy">୧</li>
+    <li class="star">⋆｡˚</li>
+    <li class="star2"> ⋆</li>
+  </ul>
+</div>
+
+<div class="scroller" data-speed="vfast">
+    <ul class="tag-list scroller__inner">
+      <li class="words1">Bats</li>
+      <li class="words2">Cats</li>
+      <li class="words1">Witches Hats</li>
+      <li class="words2">Goblins</li>
+      <li class="words1">Ghouls</li>
+      <li class="words2">Creepy Toadstools</li>
+      <li class="words1">Halloween Blessings</li>
+      <li class="words2">Accept our Offerings</li>
+    </ul>
+  </div>
+
+  <div class="scroller" data-speed="vfast" data-direction="right">
+    <ul class="tag-list scroller__inner">
+      <li class="skull">💀</li>
+      <li class="bat">🦇</li>
+      <li class="imp">😈</li>
+      <li class="blackheart">🖤</li>
+      <li class="spiders">🕷</li>
+      <li class="web1">🕸️</li>
+    </ul>
+  </div>
+
+  <div class="scroller" data-speed="vfast" data-direction="left">
+    <ul class="tag-list scroller__inner">
+      <li class="moon">🌙</li>
+      <li class="zombie">🧟‍♀️</li>
+      <li class="web2">🕸</li>
+      <li class="dracula"><a href="https://en.wikipedia.org/wiki/Dracula" target="_blank">🧛🏻‍♂️</a></li>
+      <li class="coffin">⚰️</li>
+      <li class="bugz">🕷️</li>
+    </ul>
+  </div>
+  
+<script src="scroll.js"></script>
+</body>
+</html>

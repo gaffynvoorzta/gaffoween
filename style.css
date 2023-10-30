@@ -1,0 +1,472 @@
+.scroller {
+    max-width: 600px;
+  }
+  
+  .scroller__inner {
+    padding-block: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+  
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+  
+  .scroller[data-speed="weird"] {
+    --_animation-duration: 10s;
+  }
+
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+  
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+  
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+  
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  .scroller[data-speed="vfast"] {
+    --_animation-duration: 30s;
+  }
+  
+  .scroller[data-speed="vvfast"] {
+    --_animation-duration: 15s;
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+  
+  /* general styles */
+  
+  :root {
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-primary-100: hsl(205, 15%, 58%);
+    --clr-primary-400: hsl(215, 25%, 27%);
+    --clr-primary-800: hsl(217, 33%, 17%);
+    --clr-primary-900: hsl(218, 33%, 9%);
+  }
+  
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    display: grid;
+    min-block-size: 100vh;
+    place-content: center;
+    font-family: system-ui;
+    font-size: 1rem;
+    background-color: var(--clr-primary-800);
+    animation: lightning 4s linear ease-out;
+  }
+
+  @keyframes lightning {
+    25% {
+      background-color: rgb(249, 249, 249);
+    }
+    30% {
+      background-color: var(--clr-primary-800);
+    }
+  }
+
+  .horrorheader {
+    font-family: 'creepster', arial;
+    font-size: 4rem;
+    animation: blinker 3s linear infinite;
+    color: white;
+    background: black;
+  }
+
+  .words1, .words2 {
+    color: orange;
+    background: black;
+  }
+
+  .words1 {
+    font-family: 'Flavors', cursive;
+    animation: blinker2 8s linear infinite;
+  }
+
+  .words2 {
+    font-family: 'Piedra', serif;
+    animation: blinker2 6s linear infinite;
+  }
+  
+  @keyframes blinker2 {
+    50% {
+      color: black;
+      background: orange;
+    }
+  }
+
+  .spookflash {
+    animation: spookflash 2s linear infinite;
+    border-radius: 360px;
+  }
+
+  @keyframes spookflash {
+    50% {
+      background: lightgreen;
+    }
+  }
+
+  @keyframes blinker {
+    50% {
+      color: black;
+      background: white;
+    }
+  }
+
+  .tag-list {
+    margin: 0;
+    padding-inline: 0;
+    list-style: none;
+  }
+  
+  .tag-list li {
+    padding: 1rem;
+    /*background: var(--clr-primary-400);*/
+    font-size: 4rem;
+    border-radius: 0.5rem;
+    /*box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);*/
+  }
+
+  .ghost {
+    animation: ghost 3s linear infinite, moves 2s ease-in-out infinite;
+  }
+
+  @keyframes ghost {
+    50% {
+      filter: opacity(0%);
+    }
+  }
+
+  .ghost:hover, .ghost:active {
+    animation: scaley 3s linear infinite;
+  }
+
+  @keyframes scaley {
+    50% {
+      transform: scale(5);
+    }
+  }
+
+  .trail {
+    animation: ghost 1s linear infinite, moves 3s linear infinite;
+  }
+
+  @keyframes moves {
+    25% {
+      transform: translateY(-10px);
+    }
+    75% {
+      transform: translateY(10px);
+    }
+  }
+
+  .star {
+    animation: spinny 3s linear infinite;
+  }
+
+  @keyframes spinny {
+    25% {
+      transform: rotateY(120deg);
+    }
+    50% {
+      transform: rotateY(240deg);
+    }
+    75% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .star2 {
+    animation: spinny2 8s linear infinite;
+  }
+
+  @keyframes spinny2 {
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .pumpkin {
+    animation: pumpkin 5s linear infinite;
+  }
+
+  @keyframes pumpkin {
+    20% {
+      transform: translate(-10px, -10px);
+    }
+    40% {
+      transform: translateY(20px);
+    }
+    60% {
+      transform: translate(10px, 10px);
+    }
+    80% {
+      transform: translate(10px, -10px);
+    }
+  }
+
+  .pumpkin:hover, .pumpkin:active {
+    animation: pumpkin2 5s linear infinite;
+  }
+
+  @keyframes pumpkin2 {
+    50% {
+      transform: scale(3) rotateX(3600deg);
+      filter: blur(10px);
+    }
+  }
+
+  .thingy {
+    animation: turny 8s linear infinite;
+  }
+
+  @keyframes turny {
+    50% {
+      transform: rotateX(360deg);
+    }
+  }
+
+  .dracula:hover, .dracula:active {
+    animation: drac 3s linear infinite;
+  }
+
+  @keyframes drac {
+    25% {
+      filter: greyscale(60%);
+    }
+    50% {
+      transform: scale(1.6);
+    }
+    75% {
+      filter: sepia(100%);
+    }
+  }
+
+  .zombie:hover, .zombie:active {
+    animation: zombie 3s linear infinite;
+  }
+
+  @keyframes zombie {
+    50% {
+      transform: scale(3);
+      filter: blur(1px);
+    }
+  }
+
+  .spiders:hover, .spiders:active {
+    animation: spiders 2s linear infinite;
+  }
+
+  @keyframes spiders {
+    10% {
+      transform: rotate(20deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(50deg);
+    }
+    50% {
+      transform: scale(4) rotate(-10deg);
+    }
+    60% {
+      transform: rotate(-20deg);
+    }
+    70% {
+      transform: rotate(30deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    90% {
+      transform: rotate(-50deg);
+    }
+  }
+
+  .bat:hover, .bat:active {
+    animation: bats .5s linear infinite;
+  }
+
+  @keyframes bats {
+    10% {
+      transform: translate(-5px, -10px);
+    }
+    20% {
+      transform: translate(14px, 14px);
+    }
+    30% {
+      transform: translate(-8px, -6px);
+    }
+    40% {
+      transform: translate(6px, 10px);
+    }
+    50% {
+      transform: translate(1px, -10px);
+    }
+    60% {
+      transform: translate(-5px, 9px);
+    }
+    70% {
+      transform: translate(-4px, -4px);
+    }
+    80% {
+      transform: translate(3px, -20px);
+    }
+    90% {
+      transform: translate(-3px, 2px);
+    }
+  }
+
+  .skull:hover, .skull:active {
+    animation: skully 4s linear infinite;
+  }
+
+  @keyframes skully {
+    50% {
+      transform: scale(1.6);
+      filter: invert(100%);
+    }
+  }
+
+  .blackheart:hover, .blackheart:active {
+    animation: blackheart 1s linear infinite;
+  }
+
+  @keyframes blackheart {
+    20% {
+      transform: scale(1.2);
+    }
+    40% {
+      transform: scale(1.3);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  .web1:hover, .web1:active {
+    animation: web1 5s linear infinite;
+  }
+
+  @keyframes web1 {
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .web2:hover, .web2:active {
+    animation: web2 5s linear infinite;
+  }
+
+  @keyframes web2 {
+    50% {
+      transform: rotate(-720deg);
+    }
+  }
+
+  .imp:hover, .imp:active {
+    animation: imp 3s linear infinite,
+               imp2 2s linear infinite;
+  }
+
+  @keyframes imp {
+    25% {
+      transform: scale(1.5);
+    }
+    50% {
+      filter: invert(100%);
+    }
+    60% {
+      transform: scale(0.5);
+    }
+  }
+
+  @keyframes imp2 {
+    50% {
+      filter: hue-rotate(620deg);
+    }
+  }
+
+  .coffin:hover, .coffin:active {
+    animation: coffin 6s linear infinite;
+  }
+
+  @keyframes coffin {
+    50% {
+      transform: scale(3);
+      filter: invert(100%);
+    }
+  }
+
+  .bugz:hover, .bugz:active {
+    animation: bugz 3s linear infinite;
+  }
+
+  @keyframes bugz {
+    20% {
+      transform: translateY(-10px);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(10px);
+    }
+    80% {
+      transform: translateY(20px);
+    }
+  }
+
+  .moon:hover, .moon:active {
+    animation: moon 4s linear infinite;
+  }
+
+  @keyframes moon {
+    25% {
+      filter: brightness(150%);
+      transform: scale(1.2);
+    }
+    50% {
+      transform: rotateX(-180deg);
+    }
+    75% {
+      filter: brightness(200%);
+    }
+  }
+
+  /* for testing purposed to ensure the animation lined up correctly */
+  .test {
+    background: red !important;
+  }
+  
